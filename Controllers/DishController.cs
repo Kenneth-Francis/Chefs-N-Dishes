@@ -20,7 +20,7 @@ public class DishController : Controller
     [HttpGet("dishes")]
     public ViewResult AllDishes()
     {
-        List<Dish> DishesFromDb = _context.Dishes.Include(d => d.Creator).OrderByDescending(d => d.Name).ToList();
+        List<Dish> DishesFromDb = _context.Dishes.Include(d => d.Creator).OrderBy(d => d.Name).ToList();
         return View(DishesFromDb);
     }
 
